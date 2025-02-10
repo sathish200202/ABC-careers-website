@@ -1,12 +1,16 @@
-from flask import Flask, render_template
+from flask import Flask
+from routes.mainRoutes import main
+from routes.authRoutes import auth
+
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
 
-  return render_template('home.html')
+
+
+app.register_blueprint(main)
+app.register_blueprint(auth)
 
 
 if __name__ == '__main__':

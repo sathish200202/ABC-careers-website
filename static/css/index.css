@@ -1,0 +1,89 @@
+/* section{
+  color:white;
+  background-color:#A4C3B2;
+} */
+
+section{
+  background: linear-gradient(45deg, #209cff, #68e0cf);
+  color:white;
+  height:700px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  position: relative; /* Ensure the .round-border div is positioned relative to this section */
+  padding-bottom: 50px; 
+}
+
+.heading{
+  margin-top: 10px;
+  color: white;
+  font-family: 'Roboto', sans-serif; 
+  font-weight: bolder;
+  font-size: 50px;
+  /* background-image: radial-gradient(circle,  #334eac, white);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; */
+}
+
+/* .round-border {
+  position: absolute; /* Position it inside the hero section */
+  bottom: -20%; /* Move it half outside the section */
+  right: 35%; /* Align it to the right */
+  width: 500px; /* Set width as needed */
+  height: 200px; /* Set height as needed */
+  background-color: white; /* Set background color */
+  border-radius: 50%; /* Make it a circle */
+  border: 1px solid transparent; /* Border color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+} */
+
+
+.teamwork-container {
+  max-width: 100%; /* Make sure the div takes up the entire width */
+  padding: 30px 50px;
+  display: flex;
+  flex-wrap: wrap; /* To ensure it is responsive */
+  justify-content: space-between; /* Space between paragraph and image */
+  align-items: center; /* Vertically align text and image */
+}
+
+.teamwork-text {
+  flex: 1; /* Allow paragraph to take the available space */
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 70%; /* Adjust max width so it doesn't stretch too far */
+}
+
+.teamwork-img {
+  width: 300px; /* Set a fixed width for the image */
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the image */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.teamwork-img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+@media (max-width: 768px) {
+  .teamwork-container {
+    flex-direction: column; /* Stack the paragraph and image on top of each other on smaller screens */
+    align-items: center;
+    text-align: center;
+  }
+
+  .teamwork-text {
+    max-width: 90%;
+    margin-bottom: 20px; /* Add space below the paragraph when stacked */
+  }
+
+  .teamwork-img {
+    width: 80%; /* Resize image on smaller screens */
+  }
+}

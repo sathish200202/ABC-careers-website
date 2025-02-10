@@ -1,0 +1,326 @@
+/* Custom CSS for Navbar */
+.rounded-logo {
+  width: 50px;  /* Adjust size */
+  height: 50px;  /* Adjust size */
+  border-radius: 50%;  /* This will make the image round */
+  object-fit: cover;  /* Ensures the image covers the space and doesn't stretch */
+  border: 3px solid #fff;  /* Optional: adds a border around the image */
+}
+
+.navbar {
+  padding: 1rem 0; /* Add padding to the navbar */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+  border: 1px solid transparent;
+  border-radius: 5px;
+  
+}
+
+.navbar-brand {
+  color: #2c3e50 !important; /* Dark blue color for brand */
+  font-size: 1.5rem; /* Larger font size for brand */
+}
+
+.navbar-nav .nav-link {
+  color: #2c3e50 !important; /* Dark blue color for links */
+  font-weight: 500; /* Medium font weight */
+  margin: 0 0.5rem; /* Space between links */
+  position: relative; /* For hover effect */
+}
+
+.navbar-nav .nav-link.active {
+  color: #007bff !important; /* Blue color for active link */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff !important; /* Blue color on hover */
+}
+
+/* Hover effect for links */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff; /* Blue underline */
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+/* Logout Button Style */
+.navbar-nav .btn-outline-primary {
+  border-color: #007bff; /* Blue border */
+  color: #007bff; /* Blue text */
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: #fff; /* White text on hover */
+}
+
+/* .join-btn{
+  color: blue;
+  background-color:white;
+  border: 1px solid blue;
+  width: 150px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+ */
+.btn-css {
+  display: inline-flex; /* Aligns the text and icon horizontally */
+  align-items: center;  /* Vertically aligns the text and icon */
+  width: auto;           /* Adjusts width to fit content */
+  height: 40px;
+  padding: 10px 20px;    /* Adjusts padding to provide space around the content */
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  border: 2px solid #4da674;
+  color: #4da674;
+  background-color: white;
+  font-weight: bold;     /* Ensure text has the bold weight */
+  font-size: 16px;       /* Font size for better visibility */
+}
+
+.btn-css i {
+  margin-left: 10px; /* Adds some space between the text and the arrow */
+  font-size: 18px;   /* Adjust the arrow size */
+}
+
+.btn-css:hover {
+  background-color: #4da674;
+  color: white;
+}
+
+/*Teamwork portion */
+/* Custom font import (example: Google Fonts - Poppins) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Custom CSS for the teamwork container */
+.teamwork-container {
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px; /* Padding inside the container */
+  margin: 20px auto; /* Center the container with margin */
+  max-width: 1200px; /* Maximum width of the container */
+  font-family: 'Poppins', sans-serif; /* Custom font */
+}
+
+.teamwork-heading {
+  font-size: 2rem; /* Larger font size for heading */
+  font-weight: 600; /* Bold font weight */
+  color: #2c3e50; /* Dark blue color for heading */
+  margin-bottom: 5px; /* Reduced space below the heading */
+}
+
+.teamwork-text {
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.6; /* Adjusted line height for compactness */
+  color: #333; /* Dark text color */
+  margin: 0; /* Remove default margin */
+  flex: 1; /* Allow text to take up available space */
+}
+
+.teamwork-img {
+  max-width: 250px; /* Slightly smaller image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Fully rounded border for the image */
+  border: 5px solid #ffffff; /* White border around the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.teamwork-img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+
+
+/* Footer */
+
+/* Custom CSS for Footer */
+.footer {
+   /* background: linear-gradient(45deg, #209cff, #68e0cf);*/
+  background-color: gray; /* Light background color */
+  font-family: 'Poppins', sans-serif; /* Consistent font */ 
+}
+
+.footer-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White text for headings */
+}
+
+.footer a {
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: green !important; /* Yellow color on hover */
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 0.5rem;
+}
+
+.footer .list-unstyled li i {
+  margin-right: 0.5rem;
+  color: white; 
+}
+
+.footer .list-unstyled li i:hover{
+   color: green; 
+}
+
+.footer .border-top {
+  border-color: rgba(255, 255, 255, 0.1) !important; /* Light border color */
+}
+
+
+
+/* Alternative design */
+/* General Styling for Body */
+body {
+  background: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+ /* background: linear-gradient(135deg, #ff7e5f, #feb47b);  Gradient background */
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section .heading {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.hero-section a {
+  background-color: #fff;
+  color: #1593e6;
+  padding: 12px 30px;
+  border:2px solid #1593e6;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.hero-section a:hover {
+  background-color: #1593e6;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Teamwork Section */
+.teamwork-container {
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.teamwork-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.teamwork-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.teamwork-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-right: 20px;
+}
+
+.teamwork-img {
+  max-width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamwork-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Flexbox for image and text alignment */
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d-flex img {
+  margin-left: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teamwork-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamwork-text {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .teamwork-img {
+    max-width: 120px;
+    margin-top: 15px;
+  }
+
+  .hero-section {
+    height: 90vh;
+  }
+}
+
