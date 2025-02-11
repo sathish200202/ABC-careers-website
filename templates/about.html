@@ -1,1 +1,110 @@
-<h1>About Page</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- About Section -->
+<div class="about-section py-5">
+  <h1 class='about'>About Us</h1>
+  <div class="container">
+    <!-- Mission Statement -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="about-heading mb-4">Our Mission</h2>
+        <p class="about-text">
+          At ABC Careers, our mission is to empower individuals by providing innovative, personalized career solutions that foster growth and professional success. We are dedicated to bridging the skills gap through expert guidance, advanced technology, and continuous support. By building strong partnerships with businesses, educational institutions, and job seekers, we strive to create a more inclusive and dynamic workforce, helping people achieve their career goals and thrive in the ever-evolving job market.
+        </p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="{{ url_for('static', filename='images/mission.jpg') }}" alt="Our Mission" class="about-img img-fluid rounded-lg shadow">
+      </div>
+    </div>
+
+    <!-- vision Introduction -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 order-md-1">
+        <h2 class="about-heading mb-4">Our Vision</h2>
+        <p class="about-text">
+          ABC Careers envisions becoming a leader in providing innovative career solutions that empower individuals to achieve their professional goals. The company strives to bridge the skills gap in the job market through personalized guidance and cutting-edge technology. ABC Careers aims to foster a world where individuals can easily access opportunities for growth, advancement, and meaningful work.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-2 text-center">
+        <img src="{{ url_for('static', filename='images/vision.jpg') }}" alt="Our Team" class="about-img img-fluid rounded-lg shadow">
+      </div>
+    </div>
+
+    <!-- Team Statement -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+        <h2 class="about-heading mb-4">Our Team</h2>
+        <p class="about-text">
+          The teams at ABC Careers are diverse and collaborative, bringing together professionals from various fields to deliver tailored career services. They are made up of experts in recruitment, coaching, technology, and human resources, all working in unison to meet the needs of clients. ABC Careers values continuous development and supports employees to hone their skills for future success.
+        </p>
+      </div>
+      <div class="col-md-5 text-center">
+        <img src="{{ url_for('static', filename='images/team work.jpg') }}" alt="Our Mission" class="about-img img-fluid rounded-lg shadow">
+      </div>
+    </div>
+
+    <!-- Meeting Introduction -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6 order-md-1">
+        <h2 class="about-heading mb-4">Our Meetings</h2>
+        <p class="about-text">
+          Regular meetings at ABC Careers focus on aligning team goals, discussing strategies, and sharing updates on client progress. These sessions foster a culture of open communication, ensuring that all team members are on the same page and can contribute valuable insights. The company promotes a transparent environment where feedback is welcomed and collaboration thrives.
+        </p>
+      </div>
+      <div class="col-md-5 order-md-2 text-center">
+        <img src="{{ url_for('static', filename='images/meeting.jpg') }}" alt="Our Team" class="about-img img-fluid rounded-lg shadow">
+      </div>
+    </div>
+
+    <!-- Plans Introduction -->
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-1">
+          <h2 class="about-heading mb-4">Our Plans</h2>
+          <p class="about-text">
+            ABC Careers is focused on expanding its digital platforms to improve the accessibility and efficiency of its services. Plans include launching new tools for job seekers, providing personalized learning opportunities, and forming strategic partnerships with educational institutions. Long-term, ABC Careers seeks to establish itself as a go-to resource for career growth, with a focus on both local and global outreach.
+          </p>
+        </div>
+        <div class="col-md-5 order-md-2 text-center">
+          <img src="{{ url_for('static', filename='images/work.jpg') }}" alt="Our Team" class="about-img img-fluid rounded-lg shadow">
+        </div>
+      </div>
+
+    <!-- Values Section -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="about-heading mb-4">Our Values</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Collaboration</h5>
+                <p class="card-text">At ABC Careers, collaboration is at the heart of everything we do. We believe that building strong partnerships with businesses, educational institutions, and industry leaders allows us to create tailored solutions that meet the evolving needs of the job market. By working closely with our clients and stakeholders, we ensure that both job seekers and employers benefit from our services. Through teamwork and mutual support, ABC Careers is able to offer a comprehensive, holistic approach that empowers individuals and enhances the professional landscape.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-lightbulb fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Innovation</h5>
+                <p class="card-text">Innovation drives ABC Careers forward as we continually adapt to the changing needs of the workforce. By leveraging cutting-edge technology, data-driven insights, and advanced tools, we deliver personalized career solutions that are both effective and efficient. Our commitment to innovation includes the development of user-friendly digital platforms, AI-powered job matching systems, and personalized learning pathways for skill enhancement. At ABC Careers, we aim to stay ahead of the curve, helping individuals and organizations navigate the future of work with confidence and success.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <i class="fas fa-hand-holding-heart fa-3x mb-3 text-primary"></i>
+                <h5 class="card-title">Integrity</h5>
+                <p class="card-text">At ABC Careers, integrity is the foundation of our relationships with clients, employees, and partners. We are committed to maintaining transparency, honesty, and accountability in everything we do. Our team operates with the highest ethical standards, ensuring that job seekers and employers trust us to deliver reliable and truthful guidance. We believe that by acting with integrity, we create lasting partnerships that foster success, respect, and mutual growth, making us a trusted leader in the career services industry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

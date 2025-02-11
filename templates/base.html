@@ -19,7 +19,11 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   
 <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet"}}">
-  <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet"}}">
+<link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet"}}">
+<link href="{{ url_for('static', filename='css/about.css') }}" rel="stylesheet"}}">
+<link href="{{ url_for('static', filename='css/register.css') }}" rel="stylesheet"}}">
+<link href="{{ url_for('static', filename='css/jobs.css') }}" rel="stylesheet"}}">
+
 </head>
 
 
@@ -28,7 +32,7 @@
   <!-- Navbar (Place this in a file called 'navbar.html' or directly in each page) -->
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand d-flex align-items-center" href="#">
+          <a class="navbar-brand d-flex align-items-center" href="{{ url_for('main.homeRoute') }}"}}">
             <!-- Logo Image with rounded corners -->
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="ABC Careers Logo" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 10px;">
             <!-- Brand Name -->
@@ -43,13 +47,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Home</a>
+            <a class="nav-link active" href="{{ url_for('main.homeRoute') }}"}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="{{ url_for('main.servicesRoute') }}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="jobs.html">Jobs</a>
+            <a class="nav-link" href="{{ url_for('main.aboutRoute') }}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.jobsRoute') }}">Jobs</a>
           </li>
           <li class="">
             <a class=" btn btn-outline-danger rounded-pill px-4" href="logout.html">Logout</a>
@@ -68,9 +75,9 @@
         <div class="col-md-4 mb-4">
           <h5 class="footer-heading">Quick Links</h5>
           <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Home</a></li>
-            <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+            <li><a href="{{ url_for('main.homeRoute') }}" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="{{ url_for('main.aboutRoute') }}" class="text-white text-decoration-none">About Us</a></li>
+            <li><a href="{{ url_for('main.servicesRoute') }}" class="text-white text-decoration-none">Services</a></li>
             <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
           </ul>
         </div>

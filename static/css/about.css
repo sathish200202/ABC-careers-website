@@ -1,0 +1,69 @@
+/* Custom CSS for About Section */
+.about-section {
+  background-color: #ffffff; /* White background */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
+}
+.about {
+  text-align: center;
+  font-weight: bold;
+  color: #fff; /* Unique color, you can change this to any color you prefer */
+  font-family: '', sans-serif; /* Unique font style */
+  text-transform: uppercase; /* Optional, to make the text uppercase */
+  letter-spacing: 2px; /* Optional, to add spacing between letters */
+  margin-bottom: 50px;
+  background-color: #334eac; /* Optional, to add a background color */
+  padding: 20px;
+  border: 1px solid trasperent; /* Optional, to add a border */
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px gray;
+}
+
+
+.about-heading {
+  font-size: 2.5rem; /* Larger font size for headings */
+  font-weight: 700; /* Bold font weight */
+  color: #2c3e50; /* Dark blue color */
+  margin-bottom: 1.5rem; /* Space below headings */
+}
+
+.about-text {
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.8; /* Improved line height for readability */
+  color: #555; /* Dark gray text color */
+  margin-bottom: 2rem; /* Space below text */
+}
+
+.about-img {
+  max-width: 90%; /* Ensure image fits container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.about-img:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.card {
+  background-color: #f8f9fa; /* Light background for cards */
+  border-radius: 15px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Larger font size for card titles */
+  font-weight: 600; /* Bold font weight */
+  color: #2c3e50; /* Dark blue color */
+}
+
+.card-text {
+  font-size: 1rem; /* Standard font size */
+  color: #555; /* Dark gray text color */
+}

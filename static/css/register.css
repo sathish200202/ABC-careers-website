@@ -1,0 +1,135 @@
+/* Custom Styles */
+
+/* Left side content with image */
+.left-content {
+  background-image: url("https://tse3.mm.bing.net/th?id=OIG3.8YbqmrowxzhWp7JIs1tD&pid=ImgGn");
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #28a745;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-content:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Apply blur effect to background image */
+.left-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(0px);
+  z-index: 1;
+}
+
+/* Text inside the left-content */
+.left-content .overlay-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Heading Styles */
+.left-content .overlay-text h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Paragraph Styles */
+.left-content .overlay-text p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Input and Button Styles */
+.custom-input {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.custom-btn {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 5px;
+  height: 45px;
+}
+
+.input-group-text {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+input.form-control {
+  border-radius: 5px;
+}
+
+.card-body {
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.register-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Adjust for smaller screen sizes */
+@media (max-width: 768px) {
+  .custom-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .custom-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+}
+
+.btn-style {
+  color: #007bff;
+  background-color: #fff;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-style:hover {
+  color: #fff;
+  background-color: #007bff;
+  transform: translateY(-3px);
+}
+
+.icon{
+  color: blue;
+}

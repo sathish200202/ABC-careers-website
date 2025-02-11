@@ -1,0 +1,150 @@
+/* Page Title Styling */
+.page-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 38px;
+  margin-top: 30px;
+  color: white;
+  padding-bottom: 10px;
+  background-color: #2c98a0;
+  margin-bottom: 25px;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.page-title h1 {
+  flex-grow: 1;
+  /* text-align: center; */
+  margin: 0;
+}
+
+.page-title form {
+  display: flex;
+  align-items: center;
+  justify-content: center
+  gap: 2px;
+  margin-right: 100px;
+} 
+
+.page-title input {
+  flex-grow: 1;
+  min-width: 250px;
+}
+
+.page-title button {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.page-title button i {
+  font-size: 16px;
+  
+}
+
+
+/* Card Styling */
+.traditional-card {
+  border: 2px solid white; /* Darker border color */
+  border-radius: 10px; /* Slightly rounder corners */
+  background-color: #fff; /* Lighter background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.traditional-card:hover {
+  /* transform: scale(0.05); */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Body Styling */
+.card-body {
+  padding: 20px;
+  font-family: 'Georgia', serif;
+  color: gray;
+}
+
+/* Title Styling */
+.job-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #232329;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+/* Location and Salary Styling */
+.job-location, .job-salary {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: gray;
+}
+
+/* Description Styling */
+.job-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: gray;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+/* Button Group (Apply & Job Details) */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Space between buttons */
+}
+
+.apply-btn, .details-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%; /* Make the buttons appear inline */
+}
+
+/* Apply Button Styling */
+.apply-btn {
+  background-color: white; /* Darker brown */
+  color: #2c98a0;
+  border: 1px solid #2c98a0;
+}
+
+.apply-btn:hover {
+  background-color: #2c98a0; /* Darker shade on hover */
+  color: white;
+}
+
+.apply-btn:focus {
+  outline: none;
+}
+
+/* Job Details Button Styling */
+.details-btn {
+  background-color:  #c0bfbf; /* Darker brown */
+  color: white;
+  border: none;
+}
+
+.details-btn:hover {
+  background-color: #666666; /* Lighter brown on hover */
+}
+
+.details-btn:focus {
+  outline: none;
+}
+
+.skills{
+  color: white;
+  background-color: #43c2d0;
+  font-weight: 100;
+}
+

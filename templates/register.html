@@ -1,1 +1,72 @@
-<h1>register Page</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Register Section -->
+<div class="register-section py-5">
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <!-- Left Side Content with Background Image -->
+      <div class="col-md-6 d-none d-md-block">
+        <div class="left-content">
+          <div class="overlay-text">
+            <h3 class="mb-3">Welcome to ABC Careers</h3>
+            <p>Join our community and take the first step towards your dream job. Create your account to access career resources, job opportunities, and professional growth tools.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side Form (No Changes) -->
+      <div class="col-md-5">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4 p-md-5">
+            <h2 class="register-heading text-center mb-4">Create Your Account</h2>
+            <form>
+              <!-- Full Name -->
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-user icon"></i></span>
+                  <input type="text" class="form-control custom-input" id="fullName" placeholder="Enter your full name" required>
+                </div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-envelope icon"></i></span>
+                  <input type="email" class="form-control custom-input" id="email" placeholder="Enter your email" required>
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-lock icon"></i></span>
+                  <input type="password" class="form-control custom-input" id="password" placeholder="Enter your password" required>
+                </div>
+              </div>
+
+              <!-- Confirm Password -->
+              <div class="mb-3">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="fa fa-lock icon"></i></span>
+                  <input type="password" class="form-control custom-input" id="confirmPassword" placeholder="Confirm your password" required>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn btn-style btn-lg custom-btn">Register</button>
+              </div>
+
+              <!-- Login Link -->
+              <div class="text-center mt-4">
+                <p class="mb-0">Already have an account? <a href="#" class="text-primary">Login here</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
