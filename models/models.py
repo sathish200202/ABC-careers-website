@@ -3,6 +3,7 @@ class User(db.Model):
   fullName = db.Column(db.String(200), nullable=False)
   email = db.Column(db.String(100), nullable=False)
   password = db.Column(db.String(200), nullable=False)
+  role = db.Column(db.String, nullable=False, default="User")
 
 
 class Job(db.Model):

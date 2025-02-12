@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template
+from flask import Blueprint
 
-from services.mainService import home, about, jobs, services
+from services.mainService import home, about, jobs, services, jobById, jobApply
 main = Blueprint('main', __name__)
 
 
@@ -20,3 +20,12 @@ def aboutRoute():
 @main.route('/jobs', methods=['GET', 'POST'])
 def jobsRoute():
   return jobs()
+
+
+@main.route('/job/<int:job_id>')
+def getJobRoute(job_id):
+  return jobById(job_id)
+
+@main.route('/job/<int:job_id>/apply', methods=['GET', 'POST'])
+def jobApplyRoute(job_id):
+    return jobApply(job_id)

@@ -1,7 +1,102 @@
-body{
-  background-color: red;
+/* Custom CSS for Login Section */
+.login-section {
+  background-color: #ffffff; /* White background */
+  font-family: 'Poppins', sans-serif; /* Consistent font */
 }
 
-h1{
-  color:green;
+.left-side{
+  background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+   background-size: cover;
+  background-position: center;
+  height: 90vh;
+  width: 45%;
+  border: 1px solid transparent;
+  border-radius: 15px;
+ box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-company-heading, .about-company-text {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  text-align: center; /* Ensure the text is centered inside the container */
+}
+
+.text{
+   margin-top: 50%;
+}
+
+.about-company-heading {
+  font-size: 2rem; /* Larger font size for heading */
+  font-weight: 700; /* Bold font weight */
+  color: white; /* White color */
+  margin-bottom: 1rem; /* Space below heading */
+}
+
+.about-company-text {
+  font-size: 1.1rem; /* Slightly larger font size */
+  line-height: 1.8; /* Improved line height for readability */
+  color: white; /* White color */
+}
+
+
+.login-heading {
+  font-size: 2rem; /* Larger font size for heading */
+  font-weight: 700; /* Bold font weight */
+  color: #2c3e50; /* Dark blue color */
+  margin-bottom: 1.5rem; /* Space below heading */
+}
+
+.card {
+  margin-left:30px ;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.form-label {
+  font-weight: 500; /* Medium font weight for labels */
+  color: #2c3e50; /* Dark blue color */
+}
+
+.form-control {
+  
+  border-radius: 10px; /* Rounded corners for inputs */
+  border: 1px solid #ced4da; /* Light border */
+  padding: 0.65rem 1rem; /* Padding for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Blue glow on focus */
+}
+
+.btn-primary {
+  background-color: white; /* Blue background */
+  color: #007bff;
+  border: 1px solid #007bff; /* Remove border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 0.65rem 1rem; /* Padding for button */
+  font-weight: 600; /* Bold font weight */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.btn-primary:hover {
+  background-color: #007bff; /* Darker blue on hover */
+  color: white;
+}
+
+.text-primary {
+  color: #007bff !important; /* Blue color for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.text-primary:hover {
+  color: #0056b3 !important; /* Darker blue on hover */
 }

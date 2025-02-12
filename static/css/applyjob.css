@@ -1,0 +1,49 @@
+.container {
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  width: 200px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+/* Add spacing between the title and form */
+h1 {
+  margin-bottom: 30px;
+}
+
+.form-control {
+  font-size: 1rem;
+  padding: 10px;
+    }
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}
+
+.formheading {
+  margin-top: 50px;
+  background-color: ;
+}

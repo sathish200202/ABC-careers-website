@@ -1,6 +1,6 @@
 /* Page Title Styling */
 .page-title {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 38px;
   margin-top: 30px;
   color: white;
@@ -26,10 +26,10 @@
 .page-title form {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
   gap: 2px;
   margin-right: 100px;
-} 
+}
 
 .page-title input {
   flex-grow: 1;
@@ -44,28 +44,26 @@
 
 .page-title button i {
   font-size: 16px;
-  
 }
-
 
 /* Card Styling */
 .traditional-card {
   border: 2px solid white; /* Darker border color */
   border-radius: 10px; /* Slightly rounder corners */
   background-color: #fff; /* Lighter background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .traditional-card:hover {
   /* transform: scale(0.05); */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Card Body Styling */
 .card-body {
   padding: 20px;
-  font-family: 'Georgia', serif;
+  font-family: "Georgia", serif;
   color: gray;
 }
 
@@ -79,7 +77,8 @@
 }
 
 /* Location and Salary Styling */
-.job-location, .job-salary {
+.job-location,
+.job-salary {
   font-size: 16px;
   margin-bottom: 10px;
   color: gray;
@@ -101,7 +100,8 @@
   gap: 10px; /* Space between buttons */
 }
 
-.apply-btn, .details-btn {
+.apply-btn,
+.details-btn {
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -129,7 +129,7 @@
 
 /* Job Details Button Styling */
 .details-btn {
-  background-color:  #c0bfbf; /* Darker brown */
+  background-color: #c0bfbf; /* Darker brown */
   color: white;
   border: none;
 }
@@ -142,9 +142,8 @@
   outline: none;
 }
 
-.skills{
+.skills {
   color: white;
   background-color: #43c2d0;
   font-weight: 100;
 }
-

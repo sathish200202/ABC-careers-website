@@ -1,57 +1,73 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="page-title d-flex justify-content-between align-items-center">
   <h1 class="">All Jobs</h1>
-  <form action="{{ url_for('main.jobsRoute') }}" method="POST" class="d-flex" role="search" style="width: 200px;">
-    <input class="form-control me-2" type="search" placeholder="Search" name="query" aria-label="Search" value="{{ request.form['query'] if request.form.get('query') else '' }}">
+  <form
+    action="{{ url_for('main.jobsRoute') }}"
+    method="POST"
+    class="d-flex"
+    role="search"
+    style="width: 200px"
+  >
+    <input
+      class="form-control me-2"
+      type="search"
+      placeholder="Search"
+      name="query"
+      aria-label="Search"
+      value="{{ request.form['query'] if request.form.get('query') else '' }}"
+    />
     <button class="btn btn-outline-light" type="submit">
-      <i class="fa fa-search"></i> <!-- Search Icon -->
+      <i class="fa fa-search"></i>
+      <!-- Search Icon -->
     </button>
   </form>
 </div>
 
-
-
 <div class="row">
-   {% for job in jobs %}
-    <div class="col-md-4 mb-4">
-      <div class="card traditional-card">
-        <div class="card-body">
-          <!-- Role Section with Icon -->
-          <h5 class="card-title job-title">
-            <i class="fa fa-briefcase"></i> Role: {{ job.title }}
-          </h5>
-          
-          <!-- Location Section with Icon -->
-          <p class="card-text job-location">
-            <i class="fa fa-map-marker-alt"></i> : {{ job.location }}
-          </p>
-          
-          <!-- Salary Section with Icon -->
-          <p class="card-text job-salary">
-            <i class="fa fa-dollar-sign"></i> : {{ job.salary }}
-          </p>
+  {% for job in jobs %}
+  <div class="col-md-4 mb-4">
+    <div class="card traditional-card">
+      <div class="card-body">
+        <!-- Role Section with Icon -->
+        <h5 class="card-title job-title">
+          <i class="fa fa-briefcase"></i> Role: {{ job.title }}
+        </h5>
 
-           <p class="card-text job-salary">
-             <i class="fa fa-cogs"></i> : 
-             {% for skill in job.skills %}
-              <span class="badge skills">{{ skill }}</span>
-             {% endfor %}
-           </p>
-          <!-- Description Section with Icon -->
-          <p class="card-text job-description">
-            <i class="fa fa-info-circle"></i> : {{ job.description[:60] }}{% if job.description|length > 60 %}...{% endif %}
-          </p>
+        <!-- Location Section with Icon -->
+        <p class="card-text job-location">
+          <i class="fa fa-map-marker-alt"></i> : {{ job.location }}
+        </p>
 
-          <div class="button-group">
-            <button class="apply-btn">Apply</button>
-            <button class="details-btn">Job Details</button>
-          </div>
+        <!-- Salary Section with Icon -->
+        <p class="card-text job-salary">
+          <i class="fa fa-dollar-sign"></i> : {{ job.salary }}
+        </p>
+
+        <p class="card-text job-salary">
+          <i class="fa fa-cogs"></i> : {% for skill in job.skills %}
+          <span class="badge skills">{{ skill }}</span>
+          {% endfor %}
+        </p>
+        <!-- Description Section with Icon -->
+        <p class="card-text job-description">
+          <i class="fa fa-info-circle"></i> : {{ job.description[:60] }}{% if
+          job.description|length > 60 %}...{% endif %}
+        </p>
+
+        <div class="button-group">
+          <button class="apply-btn">Apply</button>
+          <a
+            align="center"
+           href="{{ url_for('main.getJobRoute', job_id=job.id) }}"
+            style="text-decoration: none"
+            class="details-btn"
+            >Job Details</a
+          >
         </div>
       </div>
     </div>
-   {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 
 {% endblock %}

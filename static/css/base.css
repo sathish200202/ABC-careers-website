@@ -8,7 +8,7 @@
 }
 
 .navbar {
-  padding: 1rem 0; /* Add padding to the navbar */
+  padding: .35rem 0; /* Add padding to the navbar */
   font-family: 'Poppins', sans-serif; /* Consistent font */
   border: 1px solid transparent;
   border-radius: 5px;
@@ -155,6 +155,7 @@
    /* background: linear-gradient(45deg, #209cff, #68e0cf);*/
   background-color: gray; /* Light background color */
   font-family: 'Poppins', sans-serif; /* Consistent font */ 
+  padding: 30px;
 }
 
 .footer-heading {

@@ -1,0 +1,83 @@
+/* Card container style */
+.job-job-details-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px; /* Top margin for spacing */
+}
+
+/* Card style */
+.job-jobcard {
+  width: 80%;
+  max-width: 1000px; /* Max width to avoid too wide cards */
+  height: auto;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Card text and labels style */
+.job-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.job-card-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 30px;
+}
+
+.job-card-text {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Apply button style */
+.job-apply {
+  border: 2px solid rgb(6, 140, 6);
+  padding: 10px 40px;
+  width: 20%;
+  text-decoration: none;
+  border-radius: 8px;
+  color: rgb(6, 140, 6);
+}
+
+.job-apply:hover {
+  background-color: rgb(6, 140, 6);
+  color: white;
+}
+
+/* Send email button style */
+.job-sendemail {
+  border: 2px solid rgb(4, 4, 220);
+  padding: 10px 40px;
+  width: 20%;
+  text-decoration: none;
+  border-radius: 8px;
+  color: rgb(4, 4, 220);
+}
+
+.job-sendemail:hover {
+  background-color: rgb(4, 4, 220);
+  color: white;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .job-card {
+    width: 95%;
+  }
+}

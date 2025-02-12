@@ -1,79 +1,141 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ABC Careers - Home</title>
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-  <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
-
-</head>
-<body>
-  {% block content %}
-  <!-- Hero Section -->
-  <section class="hero-section d-flex flex-column justify-content-center align-items-center text-center">
-    
-    <!-- <div class="content" style="z-index: 1; color: #fff;"> -->
-      <h1 class='heading'>Welcome to ABC Careers</h1>
-    <p style="color:#e7dbef">You Can Find Your Destination Here...🚀</p>
-      <p style="margin-top: 50px; color: #e7dbef;">ABC Careers is a dynamic platform dedicated to helping individuals shape their professional futures. We provide a wide range of job opportunities across diverse industries, offering growth and development for ambitious candidates. Our team is passionate about creating a supportive and inclusive work environment for all employees. Join ABC Careers to unlock new opportunities and be part of a forward-thinking company that values innovation and talent.</p>
-    <a href="jobs.html" type="button" class="btn btn-css" style="position: absolute; bottom: 50px; font-weight: bold;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABC Careers - Home</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link
+      href="{{ url_for('static', filename='css/index.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    {% block content %}
+    <!-- Hero Section -->
+    <section
+      class="hero-section d-flex flex-column justify-content-center align-items-center text-center"
+    >
+      <!-- <div class="content" style="z-index: 1; color: #fff;"> -->
+      <h1 class="heading">Welcome to ABC Careers</h1>
+      <p style="color: #e7dbef">You Can Find Your Destination Here...🚀</p>
+      <p style="margin-top: 50px; color: #e7dbef">
+        ABC Careers is a dynamic platform dedicated to helping individuals shape
+        their professional futures. We provide a wide range of job opportunities
+        across diverse industries, offering growth and development for ambitious
+        candidates. Our team is passionate about creating a supportive and
+        inclusive work environment for all employees. Join ABC Careers to unlock
+        new opportunities and be part of a forward-thinking company that values
+        innovation and talent.
+      </p>
+      <a
+        href="{{ url_for('auth.registerRoute') }}"
+        type="button"
+        class="btn btn-css"
+        style="position: absolute; bottom: 50px; font-weight: bold"
+      >
         Join ABC <i class="fas fa-arrow-right" style="margin-top: 5px"></i>
-    </a>
+      </a>
 
-    <!-- <div class='round-border d-flex flex-column justify-content-center align-items-center text-center'>div</div> -->
-    <!-- </div> -->
-    
-  </section>
-  
-        <div class="teamwork-container d-flex flex-column p-4">
-          <h2 class="teamwork-heading">1. Team Work</h2> <!-- Reduced margin-bottom -->
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="teamwork-text me-4">
-        Teamwork and collaboration refer to the process of working together with others to achieve common goals, leveraging individual strengths and skills to maximize overall performance. Effective teamwork involves clear communication, mutual respect, trust, and cooperation. Collaboration encourages the sharing of ideas, resources, and responsibilities, fostering innovation and creativity. Successful teams value diverse perspectives, adapt to challenges, and support each other. 
-      </p>
-      <img src="{{ url_for('static', filename='images/teamwork.jpg') }}" alt="teamwork" class="teamwork-img img-fluid rounded-circle shadow">
+      <!-- <div class='round-border d-flex flex-column justify-content-center align-items-center text-center'>div</div> -->
+      <!-- </div> -->
+    </section>
+
+    <div class="teamwork-container d-flex flex-column p-4">
+      <h2 class="teamwork-heading">1. Team Work</h2>
+      <!-- Reduced margin-bottom -->
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="teamwork-text me-4">
+          Teamwork and collaboration refer to the process of working together
+          with others to achieve common goals, leveraging individual strengths
+          and skills to maximize overall performance. Effective teamwork
+          involves clear communication, mutual respect, trust, and cooperation.
+          Collaboration encourages the sharing of ideas, resources, and
+          responsibilities, fostering innovation and creativity. Successful
+          teams value diverse perspectives, adapt to challenges, and support
+          each other.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/teamwork.jpg') }}"
+          alt="teamwork"
+          class="teamwork-img img-fluid rounded-circle shadow"
+        />
+      </div>
     </div>
-  </div>
-  
-<!-- 2nd -->
-        <div class="teamwork-container d-flex flex-column p-4">
-          <h2 class="teamwork-heading">2. Services</h2> <!-- Reduced margin-bottom -->
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="teamwork-text me-4">
-              IT companies offer a variety of services including software development, network management, and IT consulting to help businesses optimize their technology infrastructure. They provide cloud computing solutions, cybersecurity to protect against threats, and data backup for disaster recovery. Ongoing IT support and system integration ensure smooth operations. Managed IT services handle all aspects of technology management, allowing businesses to focus on growth. These services enable businesses to leverage technology for improved efficiency and security. 
-      </p>
-      <img src="{{ url_for('static', filename='images/teamwork.jpg') }}" alt="teamwork" class="teamwork-img img-fluid rounded-circle shadow">
+
+    <!-- 2nd -->
+    <div class="teamwork-container d-flex flex-column p-4">
+      <h2 class="teamwork-heading">2. Services</h2>
+      <!-- Reduced margin-bottom -->
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="teamwork-text me-4">
+          IT companies offer a variety of services including software
+          development, network management, and IT consulting to help businesses
+          optimize their technology infrastructure. They provide cloud computing
+          solutions, cybersecurity to protect against threats, and data backup
+          for disaster recovery. Ongoing IT support and system integration
+          ensure smooth operations. Managed IT services handle all aspects of
+          technology management, allowing businesses to focus on growth. These
+          services enable businesses to leverage technology for improved
+          efficiency and security.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/teamwork.jpg') }}"
+          alt="teamwork"
+          class="teamwork-img img-fluid rounded-circle shadow"
+        />
+      </div>
     </div>
-  </div>
 
-
-  <!-- 3rd -->
-        <div class="teamwork-container d-flex flex-column p-4">
-          <h2 class="teamwork-heading">1. Team Work</h2> <!-- Reduced margin-bottom -->
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="teamwork-text me-4">
-        Teamwork and collaboration refer to the process of working together with others to achieve common goals, leveraging individual strengths and skills to maximize overall performance. Effective teamwork involves clear communication, mutual respect, trust, and cooperation. Collaboration encourages the sharing of ideas, resources, and responsibilities, fostering innovation and creativity. Successful teams value diverse perspectives, adapt to challenges, and support each other. 
-      </p>
-      <img src="{{ url_for('static', filename='images/teamwork.jpg') }}" alt="teamwork" class="teamwork-img img-fluid rounded-circle shadow">
+    <!-- 3rd -->
+    <div class="teamwork-container d-flex flex-column p-4">
+      <h2 class="teamwork-heading">1. Team Work</h2>
+      <!-- Reduced margin-bottom -->
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="teamwork-text me-4">
+          Teamwork and collaboration refer to the process of working together
+          with others to achieve common goals, leveraging individual strengths
+          and skills to maximize overall performance. Effective teamwork
+          involves clear communication, mutual respect, trust, and cooperation.
+          Collaboration encourages the sharing of ideas, resources, and
+          responsibilities, fostering innovation and creativity. Successful
+          teams value diverse perspectives, adapt to challenges, and support
+          each other.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/teamwork.jpg') }}"
+          alt="teamwork"
+          class="teamwork-img img-fluid rounded-circle shadow"
+        />
+      </div>
     </div>
-  </div>
 
-
-  <!-- 4th -->
-        <div class="teamwork-container d-flex flex-column p-4">
-          <h2 class="teamwork-heading mb-3">1. Team Work</h2> <!-- Reduced margin-bottom -->
-          <div class="d-flex align-items-center justify-content-between">
-            <p class="teamwork-text me-4">
-        Teamwork and collaboration refer to the process of working together with others to achieve common goals, leveraging individual strengths and skills to maximize overall performance. Effective teamwork involves clear communication, mutual respect, trust, and cooperation. Collaboration encourages the sharing of ideas, resources, and responsibilities, fostering innovation and creativity. Successful teams value diverse perspectives, adapt to challenges, and support each other. 
-      </p>
-      <img src="{{ url_for('static', filename='images/teamwork.jpg') }}" alt="teamwork" class="teamwork-img img-fluid rounded-circle shadow">
+    <!-- 4th -->
+    <div class="teamwork-container d-flex flex-column p-4">
+      <h2 class="teamwork-heading mb-3">1. Team Work</h2>
+      <!-- Reduced margin-bottom -->
+      <div class="d-flex align-items-center justify-content-between">
+        <p class="teamwork-text me-4">
+          Teamwork and collaboration refer to the process of working together
+          with others to achieve common goals, leveraging individual strengths
+          and skills to maximize overall performance. Effective teamwork
+          involves clear communication, mutual respect, trust, and cooperation.
+          Collaboration encourages the sharing of ideas, resources, and
+          responsibilities, fostering innovation and creativity. Successful
+          teams value diverse perspectives, adapt to challenges, and support
+          each other.
+        </p>
+        <img
+          src="{{ url_for('static', filename='images/teamwork.jpg') }}"
+          alt="teamwork"
+          class="teamwork-img img-fluid rounded-circle shadow"
+        />
+      </div>
     </div>
-  </div>
 
-  <!-- 5nd -->
-  <!-- <div class="teamwork-container d-flex flex-column p-4">
+    <!-- 5nd -->
+    <!-- <div class="teamwork-container d-flex flex-column p-4">
     <h2 class="teamwork-heading">5. </h2>
     <div class="d-flex align-items-center justify-content-between">
       <p class="teamwork-text me-4">
@@ -83,9 +145,8 @@
     </div>
   </div> -->
 
-
-  {% endblock %}
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    {% endblock %}
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

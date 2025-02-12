@@ -1,0 +1,43 @@
+{% extends 'base.html' %} {% block content %}
+<div class="job-job-details-container">
+  <div class="">
+    <div class="card-body">
+      <h5 class="job-card-title">ROLE: {{ job.title }}</h5>
+      <h6 class="job-card-subtitle mb-2 text-body-secondary">
+        <strong>EXPERIENCE: </strong> {{ job.experience }}
+      </h6>
+      <h6 class="job-card-subtitle mb-2 text-body-secondary">
+        <strong>LOCATION: </strong>{{ job.location }}
+      </h6>
+      <h6 class="job-card-subtitle mb-2 text-body-secondary">
+        <strong>SALARY: </strong>{{ job.salary }}
+      </h6>
+      <h6 class="job-card-text mb-2 text-body-secondary">
+        <strong>SKILLS: </strong>{% for skill in job.skills %}{{ skill }}, {%
+        endfor %}
+      </h6>
+
+      <p class="job-card-text">
+        <strong>DESCRIPTION :</strong> {{ job.description }}
+      </p>
+      <p class="job-card-text">
+        <strong>KEY RESPONSIBILITIES:</strong><br />
+        {% for keyRes in job.KeyResponsibilities %} {{ keyRes }} <br />
+        {% endfor %}
+      </p>
+      <div class="">
+        <a
+          href="{{ url_for('main.jobApplyRoute', job_id=job.id) }}"
+          class="card-link me-lg-5 job-apply"
+          >Apply</a
+        >
+        <a
+          href="mailto:officialsathish2002@gmail.com?subject=Job Application for {{ job.title }} Role."
+          class="card-link job-sendemail"
+          >Send Email</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
