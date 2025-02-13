@@ -1,0 +1,69 @@
+{% extends 'adminBase.html' %} {% block content %}
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Header -->
+  <div class="header">
+    <h1>Dashboard</h1>
+    <div class="user-info">
+      <i class="fas fa-bell" style="margin-right: 25px"></i>
+      <i class="fas fa-user-circle"></i>
+      <span>{{ current_user.fullName }}</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <span><i class="fas fa-user"></i> </span>Users
+            </h5>
+            <h4>Total Users: {{ total_users }}</h4>
+            <p class="card-text">View and manage registered users.</p>
+            <a
+              href="{{ url_for('admin.usersDetailsRoute') }}"
+              class="btn adminbutton"
+              >Manage Users</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <span><i class="fas fa-briefcase"></i> </span>Jobs
+            </h5>
+            <h4>Total Jobs: {{ total_jobs }}</h4>
+            <p class="card-text">Add, edit, and manage job postings.</p>
+            <a
+              href="{{ url_for('admin.jobsDetailsRoute') }}"
+              class="btn adminbutton"
+              >Manage Jobs</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              <span><i class="fas fa-cogs"></i> </span>Settings
+            </h5>
+            <p class="card-text">Update site settings and preferences.</p>
+            <a
+              href="{{ url_for('admin.settingsRoute') }}"
+              class="btn adminbutton"
+              >Go to Settings</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

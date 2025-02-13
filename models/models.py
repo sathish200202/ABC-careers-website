@@ -1,18 +1,10 @@
-class User(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  fullName = db.Column(db.String(200), nullable=False)
-  email = db.Column(db.String(100), nullable=False)
-  password = db.Column(db.String(200), nullable=False)
-  role = db.Column(db.String, nullable=False, default="User")
+from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
+db = SQLAlchemy()
 
-
-class Job(db.Model):
-  id = db.Column(db.Integer, primary_key=True)
-  title = db.Column(db.String(200), nullable=False)
-  description = db.Column(db.String(200), nullable=False)
-  employer = db.Column(db.String(200), nullable=False)
-  location = db.Column(db.String(200), nullable=False)
-  salary = db.Column(db.String(200), nullable=False)
-  date = db.Column(db.String(200), nullable=False)
-  user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-  user = db.relationship('User', backref=db.backref('jobs', lazy=True))
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    fullName = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(150), nullable=False)
+    password = db.Column(db.String(300), nullable=False)
+    role = db.Column(db.String(50), nullable=False, default='candidate')

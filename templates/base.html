@@ -26,6 +26,7 @@
 <link href="{{ url_for('static', filename='css/services.css') }}" rel="stylesheet">
 <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
 <link href="{{ url_for('static', filename='css/jobbyid.css') }}" rel="stylesheet">
+
 <!-- <link href="{{ url_for('static', filename='css/applyjob.css') }}" rel="stylesheet"> -->
 
 
@@ -47,14 +48,24 @@
             <!-- Brand Name -->
             <span class="fw-bold fs-4">ABC Careers</span>
           </a>
+          {% if current_user.role == 'admin' %}
+          <span class="">
+            <a href="{{ url_for('admin.adminpanelRoute') }}" class="admin-link">
+              Admin Panel
+            </a>
+          </span>
+          {% endif %}
       <!-- Toggle Button for Mobile -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+       
       <!-- Navbar Links -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+           <p class="navbar-text mx-auto" style="font-size: 16px; font-weight: bold;"><span style="font-weight: 200;">Hello,</span> {{ current_user.fullName }}</p>
+           </li>
           <li class="nav-item">
             <a class="nav-link active" href="{{ url_for('main.homeRoute') }}">Home</a>
           </li>
@@ -67,9 +78,16 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('main.jobsRoute') }}">Jobs</a>
           </li>
+           {% if current_user.is_authenticated %}
           <li class="">
-            <a class=" btn btn-outline-danger rounded-pill px-4" href="logout.html">Logout</a>
+            <a class=" btn btn-outline-danger rounded-pill px-4" href="{{ url_for('auth.logoutRoute') }}">Logout</a>
           </li>
+          {% endif %}
+          {% if not current_user.is_authenticated  %}
+          <li class="">
+            <a class=" btn btn-outline-primary rounded-pill px-4" href="{{ url_for('auth.registerRoute') }}">Sign Up</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>

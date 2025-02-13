@@ -1,0 +1,63 @@
+{% extends 'adminBase.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+    >
+  </head>
+  <body>
+    {% block content %}
+
+    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header">
+        <h1>Manage Users</h1>
+        <div class="user-info">
+          <i class="fas fa-bell" style="margin-right: 25px"></i>
+          <i class="fas fa-user-circle"></i>
+          <span>{{ current_user.fullName }}</span>
+        </div>
+      </div>
+
+
+    <div class="container mt-5 users">
+      <h2 class="text-center mb-4">User List</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users if user.role != 'admin' %}
+          <tr>
+            <td>{{ user.fullName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <!-- Role Column -->
+            <td class="action-icons">
+              <a href="#" class="text-primary"><i class="fas fa-edit"></i></a>
+              <a
+                href="#"
+                class="text-danger"
+                onclick="return confirm('Are you sure you want to delete this user?');"
+                ><i class="fas fa-trash-alt"></i
+              ></a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

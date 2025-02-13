@@ -14,6 +14,7 @@
   <body>
     {% block content %}
     <!-- Hero Section -->
+    <h2>{{ current_user.fullName }}</h2>
     <section
       class="hero-section d-flex flex-column justify-content-center align-items-center text-center"
     >
@@ -29,6 +30,7 @@
         new opportunities and be part of a forward-thinking company that values
         innovation and talent.
       </p>
+      {% if not current_user.is_authenticated %}
       <a
         href="{{ url_for('auth.registerRoute') }}"
         type="button"
@@ -37,6 +39,17 @@
       >
         Join ABC <i class="fas fa-arrow-right" style="margin-top: 5px"></i>
       </a>
+      {% else %}
+      <a
+        href="{{ url_for('main.servicesRoute') }}"
+        type="button"
+        class="btn btn-css"
+        style="position: absolute; bottom: 50px; font-weight: bold"
+      >
+        Explore Our Services
+        <i class="fas fa-arrow-right" style="margin-top: 5px"></i>
+      </a>
+      {% endif %}
 
       <!-- <div class='round-border d-flex flex-column justify-content-center align-items-center text-center'>div</div> -->
       <!-- </div> -->

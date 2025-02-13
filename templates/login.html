@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <!-- Login Section -->
 <div class="login-section py-5">
   <div class="container">
@@ -10,7 +8,10 @@
         <!-- <img src="{{ url_for('static', filename='images/tech.jpg') }}" alt="Technology" class="img-fluid rounded shadow mb-2"> -->
         <h2 class="about-company-heading text">About ABC Careers</h2>
         <p class="about-company-text">
-          At ABC Careers, we are dedicated to connecting talented individuals with their dream jobs. Our innovative platform and expert team ensure a seamless job search experience. Join us today and take the next step in your career journey!
+          At ABC Careers, we are dedicated to connecting talented individuals
+          with their dream jobs. Our innovative platform and expert team ensure
+          a seamless job search experience. Join us today and take the next step
+          in your career journey!
         </p>
       </div>
 
@@ -18,34 +19,65 @@
       <div class="col-md-5">
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4 p-md-5">
-            <h2 class="login-heading text-center mb-4">Login to Your Account</h2>
-            <form>
+            <h2 class="login-heading text-center mb-4">
+              Login to Your Account
+            </h2>
+            <form action="/login" method="POST">
               <!-- Email Input -->
               <div class="mb-3">
                 <label for="email" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
               </div>
 
               <!-- Password Input -->
               <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  required
+                />
               </div>
 
               <!-- Remember Me Checkbox -->
               <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe">
-                <label class="form-check-label" for="rememberMe">Remember Me</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="rememberMe"
+                />
+                <label class="form-check-label" for="rememberMe"
+                  >Remember Me</label
+                >
               </div>
 
               <!-- Submit Button -->
               <div class="d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  Login
+                </button>
               </div>
 
               <!-- Register Link -->
               <div class="text-center mt-4">
-                <p class="mb-0">Don't have an account? <a href="{{ url_for('auth.registerRoute') }}" class="text-primary">Register here</a></p>
+                <p class="mb-0">
+                  Don't have an account?
+                  <a
+                    href="{{ url_for('auth.registerRoute') }}"
+                    class="text-primary"
+                    >Register here</a
+                  >
+                </p>
               </div>
             </form>
           </div>

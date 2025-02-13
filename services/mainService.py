@@ -1,4 +1,5 @@
 from flask import render_template, request
+from flask_login import current_user
 
 from dummyData import Jobs_details
 

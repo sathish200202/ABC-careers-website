@@ -1,0 +1,11 @@
+.table td,
+.table th {
+  vertical-align: middle;
+}
+.action-icons i {
+  margin: 0 5px;
+  cursor: pointer;
+}
+.action-icons i:hover {
+  color: #007bff;
+}

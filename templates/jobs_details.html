@@ -1,0 +1,19 @@
+{% extends 'adminBase.html' %} {% block content %}
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Header -->
+  <div class="header">
+    <h1>Manage Jobs</h1>
+    <div class="user-info">
+      <i class="fas fa-bell" style="margin-right: 25px"></i>
+      <i class="fas fa-user-circle"></i>
+      <span>{{ current_user.fullName }}</span>
+    </div>
+  </div>
+
+  <div>
+    <h3>Jobs</h3>
+  </div>
+  {% endblock %}
+</div>

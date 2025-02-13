@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-7QINwzrmF6LVvK2Gvx5y0bBjcSoRLr5jf5AIZ06n9XJ02/Ot2XwVRy1puhFk8h+5"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/admin.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/usersdetails.css') }}"
+    />
+
+    <style></style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>Admin Panel</h2>
+      <a href="{{ url_for('admin.adminpanelRoute') }}"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+      <a href="{{ url_for('admin.usersDetailsRoute') }}"><i class="fas fa-users"></i> Manage Users</a>
+      <a href="{{ url_for('admin.jobsDetailsRoute') }}"><i class="fas fa-briefcase"></i> Manage Jobs</a>
+      <a href="{{ url_for('admin.settingsRoute') }}"><i class="fas fa-cog"></i> Settings</a>
+      <a href="{{ url_for('auth.logoutRoute') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+
+
+      {% block content %} {% endblock %}
+
+      <!-- Scripts -->
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-nQH1WYrjIZBdr7lXfJHNmHo5FGxZT4tZpo6E38b8gUgsfz8wM1Lt/ED9hQ/jb1M1"
+        crossorigin="anonymous"
+      ></script>
+    </div>
+  </body>
+</html>
