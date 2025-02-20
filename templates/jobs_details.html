@@ -1,19 +1,66 @@
-{% extends 'adminBase.html' %} {% block content %}
+{% extends 'adminBase.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job List</title>
+    >
+  </head>
+  <body>
+  {% block content %}
+  <body>
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header">
+        <h1>Manage Jobs</h1>
+        <div class="user-info">
+          <i class="fas fa-bell" style="margin-right: 25px"></i>
+          <i class="fas fa-user-circle"></i>
+          <span>{{ current_user.fullName }}</span>
+        </div>
+      </div>
 
-<!-- Main Content -->
-<div class="main-content">
-  <!-- Header -->
-  <div class="header">
-    <h1>Manage Jobs</h1>
-    <div class="user-info">
-      <i class="fas fa-bell" style="margin-right: 25px"></i>
-      <i class="fas fa-user-circle"></i>
-      <span>{{ current_user.fullName }}</span>
+       <h3>Jobs</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Experience</th>
+        <th>Location</th>
+        <th>Salary(LPA)</th>
+        <th>Role</th>
+        <th>Skills</th>
+        <th>Description</th>
+        <th>Roles & Responsibility</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for job in jobs %}
+      <tr>
+        <td>{{ job.title }}</td>
+        <td>{{ job.experience }}</td>
+        <td>{{ job.location }}</td>
+        <td>{{ job.salary }}</td>
+        <td>{{ job.role }}</td>
+        <td>{{ job.skills }}</td>
+        <td>{{ job.description }}</td>
+        <td>{{ job.roles_and_responsibility }}</td>
+        <td>
+          <div class="action-buttons">
+            <a href="{{ url_for('admin.update_job', job_id=job.id) }}"><p>Edit</p></a>
+            <a href="{{ url_for('admin.delete_job', job_id=job.id) }}"><p>Delete</p></a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+        <a href="{{ url_for('admin.create_jobs') }}">Create New Job</a>
+      </div>
+      {% endblock %}
     </div>
-  </div>
-
-  <div>
-    <h3>Jobs</h3>
-  </div>
-  {% endblock %}
-</div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import TypeDecorator
 from dotenv import load_dotenv
 from flask_login import LoginManager
 
@@ -28,6 +28,10 @@ login_manager.init_app(app)
 login_manager.login_view = "auth.loginRoute"
 
 
+
+
+
+
 @login_manager.user_loader
 def load_user(user_id):
   return User.query.get(int(user_id))
@@ -39,8 +43,8 @@ app.register_blueprint(admin)
 
 
 if __name__ == '__main__':
-  # with app.app_context():
-  #   db.drop_all()
-  #   db.create_all()
-  #   print("table created successfully")
+  with app.app_context():
+    #db.drop_all()
+    db.create_all()
+    print("table created successfully")
   app.run(debug=True, host='0.0.0.0', port=int(os.getenv('PORT')))

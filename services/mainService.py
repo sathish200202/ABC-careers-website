@@ -1,6 +1,7 @@
 from flask import render_template, request
 from flask_login import current_user
 
+from models.models import Job
 from dummyData import Jobs_details
 
 
@@ -29,7 +30,10 @@ def jobs():
         query.lower() in job['salary'].lower()
     ]
   else:
-    jobs = Jobs_details
+    jobs = Job.query.all()
+    # for job in jobs:
+    #  skill_set = [skill.strip() for skill in job.skills.split(',')]
+    # print(f"skill set: {skill_set}")
 
   return render_template('jobs.html', jobs=jobs)
 

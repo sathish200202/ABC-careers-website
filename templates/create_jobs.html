@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Job Listing</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/createJob.css')}}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Create a New Job Listing</h1>
+      <form action="/create-job" method="POST">
+        <div class="form-group">
+          <label for="title">Job Title</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+
+        <div class="form-group">
+          <label for="experience">Experience (in years)</label>
+          <input type="number" id="experience" name="experience" required />
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" required />
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" step="0.01" id="salary" name="salary" required />
+        </div>
+
+        <div class="form-group">
+          <label for="role">Role</label>
+          <input type="text" id="role" name="role" value="candidate" />
+        </div>
+
+        <div class="form-group">
+          <label for="skills">Skills (comma separated)</label>
+          <input type="text" id="skills" name="skills" required />
+        </div>
+
+        <div class="form-group">
+          <label for="description">Job Description</label>
+          <textarea id="description" name="description" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="roles_and_responsibility"
+            >Roles and Responsibilities (comma separated)</label
+          >
+          <input
+            type="text"
+            id="roles_and_responsibility"
+            name="roles_and_responsibility"
+            required
+          />
+        </div>
+
+        <button type="submit">Submit Job</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -29,9 +29,12 @@
     <div class="card traditional-card">
       <div class="card-body">
         <!-- Role Section with Icon -->
-        <h5 class="card-title job-title">
-          <i class="fa fa-briefcase"></i> Role: {{ job.title }}
-        </h5>
+        <h5 class="card-title job-title">Role: {{ job.title }}</h5>
+
+        <!-- Experience Section with Icon -->
+        <p class="card-text job-location">
+          <i class="fa fa-briefcase"></i> : <span>{{ job.experience }} Years</span>
+        </p>
 
         <!-- Location Section with Icon -->
         <p class="card-text job-location">
@@ -40,13 +43,12 @@
 
         <!-- Salary Section with Icon -->
         <p class="card-text job-salary">
-          <i class="fa fa-dollar-sign"></i> : {{ job.salary }}
+          <i class="fa fa-dollar-sign"></i> : {{ job.salary }} LPA
         </p>
 
         <p class="card-text job-salary">
-          <i class="fa fa-cogs"></i> : {% for skill in job.skills %}
-          <span class="badge skills">{{ skill }}</span>
-          {% endfor %}
+          <i class="fa fa-cogs"></i> :
+          <span class="badge skills">{{ job.skills }}</span>
         </p>
         <!-- Description Section with Icon -->
         <p class="card-text job-description">
@@ -58,7 +60,7 @@
           <button class="apply-btn">Apply</button>
           <a
             align="center"
-           href="{{ url_for('main.getJobRoute', job_id=job.id) }}"
+            href="{{ url_for('main.getJobRoute', job_id=job.id) }}"
             style="text-decoration: none"
             class="details-btn"
             >Job Details</a
