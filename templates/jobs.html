@@ -33,7 +33,11 @@
 
         <!-- Experience Section with Icon -->
         <p class="card-text job-location">
-          <i class="fa fa-briefcase"></i> : <span>{{ job.experience }} Years</span>
+          <i class="fa fa-briefcase"></i> :
+          <span
+            >{% if job.experience == 0 %}Freshers {% else %} {{ job.experience
+            }} Years {% endif %}</span
+          >
         </p>
 
         <!-- Location Section with Icon -->
@@ -47,8 +51,12 @@
         </p>
 
         <p class="card-text job-salary">
-          <i class="fa fa-cogs"></i> :
-          <span class="badge skills">{{ job.skills }}</span>
+          <i class="fa fa-cogs"></i> : {% set max_skills = 4 %} {% set skills =
+          job.get_skills_list() %} {% for skill in skills[:max_skills] %}
+          <span class="badge skills"> {{ skill }} </span>
+          {% endfor %} {% if skills|length > max_skills %}
+          <span class="badge skills">ect...</span>
+          {% endif %}
         </p>
         <!-- Description Section with Icon -->
         <p class="card-text job-description">

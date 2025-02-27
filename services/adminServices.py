@@ -1,16 +1,16 @@
 from flask import render_template, url_for, redirect, request
 
 from models.models import User, Job, db
-from dummyData import Jobs_details
 def adminpanel():
-    total_users = User.query.count()
-
-    total_jobs = len(Jobs_details)
-    return render_template('admin.html', total_users = total_users, total_jobs=total_jobs)
+    total_users = User.query.filter(User.role =='candidate').count()
+    total_admins = User.query.filter(User.role =='admin').count()
+    total_jobs = Job.query.count()
+    return render_template('admin.html', total_users = total_users, total_admins=total_admins, total_jobs=total_jobs)
 
 def usersDetails():
-    users = User.query.all()
-    return render_template('users_details.html', users = users)
+    users = User.query.filter(User.role=='candidate')
+    admins = User.query.filter(User.role=='admin')
+    return render_template('users_details.html', users = users, admins=admins)
 
 def jobsDetails():
     jobs = Job.query.all()
@@ -72,6 +72,7 @@ def update_job_details(job_id):
             print(f"Error in deleting job: {e}")
             return redirect(url_for('admin.jobsDetailsRoute'))
     return render_template('update_job.html', job=job)
+
 def delete_job_by_id(job_id):
     job = Job.query.filter_by(id=job_id).first()
     try:
@@ -82,3 +83,26 @@ def delete_job_by_id(job_id):
         print(f"Error in deleting job: {e}")
         return redirect(url_for('admin.jobsDetailsRoute'))
     
+
+
+def update_user_by_id(user_id):
+    return
+
+
+def delete_user_by_id(user_id):
+    
+    user = User.query.filter(User.id == user_id).first()
+    if user:
+        try:
+
+            db.session.delete(user)
+            db.session.commit()
+            return redirect(url_for('admin.usersDetailsRoute'))
+        
+        except Exception as e:
+            db.session.rollback()
+            print(f"Error in deleting user: {e}")
+            return redirect(url_for('admin.usersDetailsRoute'))
+    
+    else:
+        return "User not found"

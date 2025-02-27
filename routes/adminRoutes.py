@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_login import login_required
-from services.adminServices import adminpanel, usersDetails, jobsDetails, settings, create_new_job,update_job_details, delete_job_by_id
+from services.adminServices import adminpanel, usersDetails, jobsDetails, settings, create_new_job,update_job_details, delete_job_by_id, update_user_by_id, delete_user_by_id
 
 admin = Blueprint('admin', __name__)
 
@@ -41,3 +41,12 @@ def update_job(job_id):
 @login_required
 def delete_job(job_id):
     return delete_job_by_id(job_id)
+
+
+@admin.route('/user/update/<int:user_id>', methods=['GET', 'POST'])
+def update_user(user_id):
+    return update_user_by_id(user_id)
+
+@admin.route('/user/delete/<int:user_id>', methods=['GET', 'POST'])
+def delete_user(user_id):
+    return delete_user_by_id(user_id)

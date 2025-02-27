@@ -4,38 +4,162 @@
     <div class="card-body">
       <h5 class="job-card-title">ROLE: {{ job.title }}</h5>
       <h6 class="job-card-subtitle mb-2 text-body-secondary">
-        <strong>EXPERIENCE: </strong> {{ job.experience }}
+        <strong>EXPERIENCE: </strong>{% if job.experience == 0 %}Frehsers {%
+        else %} {{ job.experience }} Years{% endif %}
       </h6>
       <h6 class="job-card-subtitle mb-2 text-body-secondary">
         <strong>LOCATION: </strong>{{ job.location }}
       </h6>
       <h6 class="job-card-subtitle mb-2 text-body-secondary">
-        <strong>SALARY: </strong>{{ job.salary }}
+        <strong>SALARY: </strong>{{ job.salary }} LPA
       </h6>
       <h6 class="job-card-text mb-2 text-body-secondary">
-        <strong>SKILLS: </strong>{% for skill in job.skills %}{{ skill }}, {%
-        endfor %}
+        <strong>SKILLS: </strong>{{ job.skills }}
       </h6>
 
       <p class="job-card-text">
         <strong>DESCRIPTION :</strong> {{ job.description }}
       </p>
       <p class="job-card-text">
-        <strong>KEY RESPONSIBILITIES:</strong><br />
-        {% for keyRes in job.KeyResponsibilities %} {{ keyRes }} <br />
+        <strong>KEY RESPONSIBILITIES:</strong>
+        {% for keyRes in job.get_roles_list() %} {{ keyRes }} <br />
         {% endfor %}
       </p>
       <div class="">
+        <!-- Apply Link that triggers the modal -->
         <a
-          href="{{ url_for('main.jobApplyRoute', job_id=job.id) }}"
+          href="#"
           class="card-link me-lg-5 job-apply"
-          >Apply</a
+          data-bs-toggle="modal"
+          data-bs-target="#applicationModal"
         >
+          Apply
+        </a>
+
+        <!-- Send Email Link -->
         <a
           href="mailto:officialsathish2002@gmail.com?subject=Job Application for {{ job.title }} Role."
           class="card-link job-sendemail"
-          >Send Email</a
         >
+          Send Email
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Structure for Job Application Form -->
+<div
+  class="modal fade"
+  id="applicationModal"
+  tabindex="-1"
+  aria-labelledby="applicationModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="applicationModalLabel">
+          Job Application Form
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form
+          action="/job/{{job.id}}/apply"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Personal Information Section -->
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullName"
+              name="fullName"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="john.doe@example.com"
+              required
+            />
+          </div>
+
+          <!-- Contact Information Section -->
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phone"
+              name="mobile_number"
+              placeholder="+1 (555) 123-4567"
+              required
+            />
+          </div>
+
+          <!-- Resume Upload -->
+          <div class="mb-3">
+            <label for="resume" class="form-label"
+              >Upload Your Resume (PDF, DOCX)</label
+            >
+            <input
+              type="file"
+              class="form-control"
+              id="resume"
+              name="resume_link"
+              accept=".pdf,.docx,.doc,.txt"
+              required
+            />
+          </div>
+
+          <!-- Cover Letter Section
+          <div class="mb-3">
+            <label for="coverLetter" class="form-label">Cover Letter</label>
+            <textarea
+              class="form-control"
+              id="coverLetter"
+              name="coverLetter"
+              rows="4"
+              placeholder="Tell us why you're a great fit for this job."
+              required
+            ></textarea>
+          </div> -->
+
+          <!-- Experience Section -->
+          <div class="mb-3">
+            <label for="experience" class="form-label">Message</label>
+            <input
+              type="text"
+              class="form-control"
+              id="experience"
+              name="message"
+              placeholder="Message"
+              required
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">
+              Submit Application
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

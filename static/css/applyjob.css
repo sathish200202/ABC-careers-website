@@ -1,49 +1,54 @@
-.container {
-  max-width: 800px;
-  margin-top: 20px;
+/* Modal styling */
+.modal-content {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling inside the modal */
+.modal-body {
+    padding: 20px;
 }
 
 .form-label {
-  font-weight: bold;
-}
-
-.btn-primary {
-  width: 200px;
-  padding: 10px;
-  font-size: 1.1rem;
-}
-
-.row {
-  margin-bottom: 20px;
-}
-
-/* Add spacing between the title and form */
-h1 {
-  margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .form-control {
-  font-size: 1rem;
-  padding: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+}
+
+/* Modal Trigger Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Adjust padding and spacing for smaller screens */
+@media (max-width: 768px) {
+    .modal-dialog {
+        max-width: 90%;
     }
 
-.form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-
-  .btn-primary {
-    width: 100%;
-  }
-}
-
-.formheading {
-  margin-top: 50px;
-  background-color: ;
+    .form-control {
+        font-size: 0.9rem;
+    }
 }
