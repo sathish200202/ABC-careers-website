@@ -1,11 +1,12 @@
 from flask import render_template, url_for, redirect, request
 
-from models.models import User, Job, db
+from models.models import User, Job, JobApplication, db
 def adminpanel():
     total_users = User.query.filter(User.role =='candidate').count()
     total_admins = User.query.filter(User.role =='admin').count()
     total_jobs = Job.query.count()
-    return render_template('admin.html', total_users = total_users, total_admins=total_admins, total_jobs=total_jobs)
+    total_applications = JobApplication.query.count()
+    return render_template('admin.html', total_users = total_users, total_admins=total_admins, total_jobs=total_jobs, total_applications=total_applications)
 
 def usersDetails():
     users = User.query.filter(User.role=='candidate')
@@ -106,3 +107,10 @@ def delete_user_by_id(user_id):
     
     else:
         return "User not found"
+    
+
+
+def all_job_applications():
+    job_applications = JobApplication.query.all()
+
+    return render_template('job_applications.html', job_applications=job_applications)

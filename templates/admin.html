@@ -52,6 +52,22 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">
+              <span><i class="fas fa-paper-plane"></i> </span>Job Applications
+            </h5>
+            <h4>Total Applications: {{ total_applications }}</h4>
+            <p class="card-text">Keep track of all job applicants.</p>
+            <a
+              href="{{ url_for('admin.job_applicationsRoute') }}"
+              class="btn adminbutton"
+              >View Job Applications</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
               <span><i class="fas fa-cogs"></i> </span>Settings
             </h5>
             <p class="card-text">Update site settings and preferences.</p>

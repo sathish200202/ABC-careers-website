@@ -1,0 +1,199 @@
+{% extends 'adminBase.html' %} {% block content %}
+
+<style>
+  /* Main content area */
+  .main-content {
+    background-color: #f4f7fc;
+    padding: 30px 0;
+  }
+
+  /* Header styling */
+  .header {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+    color: #343a40;
+    font-weight: 600;
+  }
+
+  .user-info {
+    font-size: 1rem;
+  }
+
+  .user-info i {
+    font-size: 1.6rem;
+    color: #007bff;
+  }
+
+  .user-info span {
+    margin-left: 10px;
+    font-weight: 600;
+  }
+
+  /* Job application table */
+  .job-application-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .job-application-table th,
+  .job-application-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    color: black;
+  }
+
+  .job-application-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+
+  .job-application-table td {
+    background-color: #ffffff;
+  }
+
+  /* Badge style */
+  .badge {
+    padding: 4px 9px;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 70px;
+  }
+
+  .badge.bg-success {
+    background-color: #28a745 !important;
+  }
+
+  .badge.bg-warning {
+    background-color: #ffc107 !important;
+  }
+
+  .badge.bg-danger {
+    background-color: #dc3545 !important;
+  }
+
+  .edit-icon {
+    padding-left: 15px;
+    cursor: pointer;
+  }
+
+  /* Resume link styling */
+  .resume-link {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .resume-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .job-application-table {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Header Section -->
+  <div class="header d-flex justify-content-between align-items-center">
+    <h1>Job Applications</h1>
+    <div class="user-info d-flex align-items-center">
+      <i class="fas fa-bell me-3 text-secondary"></i>
+      <i class="fas fa-user-circle me-2 text-primary"></i>
+      <span>{{ current_user.fullName }}</span>
+    </div>
+  </div>
+
+  <!-- Job Applications List -->
+  <div class="container">
+    <table class="job-application-table">
+      <thead>
+        <tr>
+          <th>Applicant Name</th>
+          <th>Job ID</th>
+          <th>Mobile</th>
+          <th>Email</th>
+          <th>Applied On</th>
+          <th>Resume</th>
+          <th>Message</th>
+          <th>Status</th>
+
+          <th>View the full Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for jobapplication in job_applications %}
+        <tr>
+          <td>{{ jobapplication.applicant_name }}</td>
+          <td>{{ jobapplication.job_id }}</td>
+          <td>{{ jobapplication.applicant_mobile_number }}</td>
+          <td>{{ jobapplication.applicant_email }}</td>
+          <td>
+            {{ jobapplication.application_date.strftime('%Y-%m-%d %H:%M') }}
+          </td>
+          <td>
+            {% if jobapplication.resume_link %}
+            <a
+              href="{{ url_for('static', filename=jobapplication.resume_link) }}"
+              class="resume-link"
+              target="_blank"
+              >View Resume</a
+            >
+            {% else %} No resume uploaded. {% endif %}
+          </td>
+          <td>{{ jobapplication.message }}</td>
+          <td>
+            <span
+              class="badge {% if jobapplication.status == 'Pending' %} bg-warning {% elif jobapplication.status == 'Shortlisted' %} bg-success {% elif jobapplication.status == 'Not Shortlisted' %} bg-danger {% elif jobapplication.status == 'Not viewed' %} bg-primary {% endif %} p-2"
+            >
+              {{ jobapplication.status }}
+            </span>
+
+            <a class="edit-icon text-primary">
+              <i class="fas fa-edit"></i>
+            </a>
+            <div id="statusEdit_{{ jobapplication.id }}" style="display: none">
+              <input
+                type="text"
+                id="statusInput_{{ jobapplication.id }}"
+                class="form-control"
+                value="{{ jobapplication.status }}"
+              />
+              <button class="btn btn-sm btn-success">Save</button>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %} {% block Scripts %}
+<script>
+  // Function to handle the edit functionality
+  function editStatus(jobId) {
+    document.getElementById("statusEdit_" + jobId).style.display = "block";
+  }
+
+  function saveStatus(jobId) {
+    // Fetch new status value and send to backend for saving
+    var newStatus = document.getElementById("statusInput_" + jobId).value;
+    // Here you would typically make an AJAX request to update the status
+    alert("Status for Job ID " + jobId + " has been updated to: " + newStatus);
+  }
+</script>
+{% endblock %}
